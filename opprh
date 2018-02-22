@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+ <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+ 
+        <title>Oppervlakte berekenen</title>
+        
+<style>
+
+div.scorebord{
+	margin-top:100px;	
+}
+
+html, body {
+     font-size: 20px;   
+	 font-family: verdana;  
+	 color:#000; 
+     margin:0; /* remove default margin */
+     padding:0; /* remove default padding */
+     width:100%; /* take full browser width */
+     height:100%; /* take full browser height*/
+	 background-color: #FFF;
+	 background-image:url(ag2.png);
+
+  
+}
+
+  .screen {
+               
+                margin: 0;
+                position: absolute;
+                width: 100%; /* BenM mentioned this in answer*/
+                height: 100%; /* take full browser height */
+                left: 0;
+                top: 0;
+				
+            }
+
+  .screen .main {
+                width: 100%; /* <--now this takes full browser dimension  */
+                height: 100%; /* <--now this takes full browser dimension  */
+		
+            }
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+} 
+</style>        
+        
+        
+        
+         <script>
+             function oppervlakte()
+             {
+                 var breedte = document.forms["BerekenOppervlakte"]["breedte"].value;
+                 var lengte = document.forms["BerekenOppervlakte"]["lengte"].value;
+                 var opp = breedte * lengte;
+                 var tekst = document.getElementById("tekst");
+                 tekst.innerHTML = "De oppervlakte is " + opp;
+             }  
+
+        </script>
+    </head>
+    
+ <body>
+<div class="screen">
+<div class"=main">
+<div align="center" class="scorebord">
+
+  <div style="height:50px">Bereken de oppervlakte van een rechthoek:</div>
+  <form id="BerekenOppervlakte" action="">
+  Breedte: <input type="number" name="breedte" id="breedte" value="" height="20px"><br>
+  Lengte: <input type="number" name="lengte" id="lengte" value="" height="20px"><br><br>
+  <input type="button" value="Bereken" onClick="oppervlakte()" height="40px" style="font-size:20px">
+</form>
+        <p id="tekst"></p>
+
+</div>
+
+</body>   
+    
+</html>
